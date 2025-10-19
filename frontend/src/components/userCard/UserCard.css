@@ -1,0 +1,268 @@
+
+.user-card-container {
+    height: 100%;
+  }
+  
+  .user-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: white;
+    overflow: hidden;
+    position: relative;
+    min-height: 380px;
+  }
+  
+  .user-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Conteneur d'image professionnel */
+  .user-card-img-container {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    background: #f8f9fa;
+  }
+  
+  /* Image adaptée professionnellement */
+  .user-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.4s ease;
+  }
+  
+  .user-card:hover .user-card-img {
+    transform: scale(1.08);
+  }
+  
+  /* Overlay professionnel */
+  .user-card-img-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+    pointer-events: none;
+  }
+  
+  /* Avatar par défaut professionnel */
+  .default-avatar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+    position: relative;
+  }
+  
+  .default-avatar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+  }
+  
+  /* Badge de rôle */
+  .role-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    color: #2d3748;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+  
+  .role-badge.admin {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #744210;
+  }
+  
+  .role-badge.user {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+  
+  /* Body de la carte */
+  .user-card .card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: white;
+  }
+  
+  .user-card .card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  
+  .user-card .card-text {
+    color: #718096;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Section des boutons */
+  .user-card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+  }
+  
+  .btn-details {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    flex: 1;
+    color: white;
+  }
+  
+  .btn-details:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    color: white;
+  }
+  
+  .btn-delete {
+    background: linear-gradient(135deg, #fc8181 0%, #f56565 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    flex: 1;
+    color: white;
+  }
+  
+  .btn-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 101, 101, 0.4);
+    background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+    color: white;
+  }
+  
+  /* Animation d'entrée */
+  @keyframes cardEntrance {
+    from {
+      opacity: 0;
+      transform: scale(0.9) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  .user-card {
+    animation: cardEntrance 0.6s ease-out;
+  }
+  
+  /* Statut en ligne */
+  .online-status {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 12px;
+    height: 12px;
+    background: #48bb78;
+    border: 2px solid white;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(72, 187, 120, 0.4);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .user-card {
+      min-height: 350px;
+      border-radius: 15px;
+    }
+    
+    .user-card-img-container {
+      height: 180px;
+    }
+    
+    .user-card .card-body {
+      padding: 15px;
+    }
+    
+    .user-card .card-title {
+      font-size: 1.2rem;
+    }
+    
+    .user-card-actions {
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .btn-details,
+    .btn-delete {
+      width: 100%;
+    }
+    
+    .default-avatar {
+      font-size: 3rem;
+    }
+  }
+  
+  /* Support dark mode */
+  @media (prefers-color-scheme: dark) {
+    .user-card {
+      background: #2d3748;
+    }
+    
+    .user-card .card-body {
+      background: #2d3748;
+    }
+    
+    .user-card .card-title {
+      color: #e2e8f0;
+    }
+    
+    .user-card .card-text {
+      color: #cbd5e0;
+    }
+    
+    .default-avatar {
+      background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+    }
+    
+    .user-card-img-container {
+      background: #4a5568;
+    }
+  }

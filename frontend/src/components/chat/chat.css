@@ -1,0 +1,146 @@
+/* Animation d'enregistrement */
+.pulse-animation {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+  }
+  
+  /* Indicateur d'enregistrement */
+  .recording-indicator {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Indicateur fichiers sélectionnés */
+  .selected-files-indicator {
+    animation: slideUp 0.3s ease-out;
+    max-height: 100px;
+    overflow-y: auto;
+  }
+  
+  /* Picker d'emojis */
+  .emoji-picker {
+    border: 1px solid #dee2e6 !important;
+  }
+  
+  .emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+  }
+  
+  .emoji-item:hover {
+    transform: scale(1.2);
+    transition: transform 0.1s;
+  }
+  
+  /* Zone de chat améliorée */
+  .chat-input {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .messages-container {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e0 #f7fafc;
+  }
+  
+  .messages-container::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .messages-container::-webkit-scrollbar-track {
+    background: #f7fafc;
+  }
+  
+  .messages-container::-webkit-scrollbar-thumb {
+    background-color: #cbd5e0;
+    border-radius: 3px;
+  }
+  
+  /* Prévisualisation fichiers */
+  .files-preview {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .file-item {
+    background-color: #f8f9fa;
+  }
+  
+  .file-icon {
+    font-size: 1.5rem;
+  }
+  
+  /* Badges pour les types de messages */
+  .file-badge {
+    font-size: 0.75em;
+  }
+  
+  /* Message bubble amélioré */
+  .message-bubble {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 70%;
+  }
+  
+  .own-message {
+    background-color: #007bff;
+    color: white;
+    margin-left: auto;
+  }
+  
+  .other-message {
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  
+  .message-time {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-top: 5px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .emoji-picker {
+      width: 200px !important;
+      height: 150px !important;
+    }
+    
+    .emoji-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .message-bubble {
+      max-width: 85%;
+    }
+  }

@@ -1,0 +1,438 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Changa:wght@400;600;700&family=El+Messiri:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: 'Tajawal', 'Changa', 'Amiri', sans-serif;
+}
+
+/* CHANGEMENT COMPLET : Centrage absolu du container */
+.register-container {
+  padding: 2rem 1rem;
+  min-height: calc(100vh - 140px); /* Prend en compte navbar et footer */
+  background: transparent !important;
+  font-family: 'Tajawal', 'Changa', 'Amiri', sans-serif;
+  width: 100%;
+  display: flex;
+  align-items: flex-start; /* Commence du haut */
+  justify-content: center; /* Centre horizontalement */
+  margin: 0 auto;
+}
+
+/* CHANGEMENT : Container Bootstrap normal mais centré */
+.register-container .container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 15px;
+  max-width: 100%;
+}
+
+/* CHANGEMENT : Row centrée */
+.register-container .row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+
+/* CHANGEMENT : Col avec largeur contrôlée */
+.register-container .col-lg-12 {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  max-width: 1200px; /* Largeur maximale du formulaire */
+  width: 100%;
+}
+
+/* CHANGEMENT : Carte avec largeur 100% et centrage */
+.register-card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  overflow: hidden;
+  width: 100%; /* Prend toute la largeur disponible dans la col */
+  max-width: 1200px; /* Mais ne dépasse pas cette largeur */
+  margin: 0 auto; /* Centre à l'intérieur de la col */
+}
+
+/* NOUVELLE ANIMATION : En-tête avec bande lumineuse qui passe */
+.register-header {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(45deg, #3498db, #2ecc71, #e74c3c);
+  border-image-slice: 1;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animation de la bande lumineuse qui traverse */
+.register-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.1), 
+    rgba(255, 255, 255, 0.2), 
+    rgba(255, 255, 255, 0.1), 
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shine 4s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes shine {
+  0% { 
+    transform: translateX(-100%) translateY(-100%) rotate(45deg); 
+  }
+  15% { 
+    transform: translateX(100%) translateY(100%) rotate(45deg); 
+  }
+  100% { 
+    transform: translateX(100%) translateY(100%) rotate(45deg); 
+  }
+}
+
+/* Effet de brillance supplémentaire */
+.register-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer 6s infinite;
+  animation-delay: 2s;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  20% { left: 100%; }
+  100% { left: 100%; }
+}
+
+.register-title {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  font-family: 'Changa', 'Tajawal', sans-serif;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 1px;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  from {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4),
+                 0 0 0px rgba(255, 255, 255, 0.8);
+  }
+  to {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6),
+                 0 0 15px rgba(255, 255, 255, 0.4);
+  }
+}
+
+.register-subtitle {
+  color: #ecf0f1;
+  font-size: 1.3rem;
+  margin: 0;
+  opacity: 0.9;
+  font-family: 'El Messiri', 'Changa', sans-serif;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  animation: subtitleFade 4s ease-in-out infinite;
+}
+
+@keyframes subtitleFade {
+  0%, 100% { opacity: 0.9; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-2px); }
+}
+
+.register-form {
+  padding: 2rem;
+  direction: rtl;
+}
+
+.form-section {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: rgba(52, 152, 219, 0.05);
+  border-radius: 15px;
+  border-left: 4px solid #3498db;
+  transition: all 0.3s ease;
+  text-align: right;
+}
+
+.form-section:hover {
+  background: rgba(52, 152, 219, 0.08);
+  transform: translateX(-5px);
+}
+
+.section-title {
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+  display: block;
+  font-family: 'Changa', 'Tajawal', sans-serif;
+  text-align: center;
+  width: 100%;
+}
+
+.form-group-custom {
+  position: relative;
+  text-align: right;
+}
+
+.form-group-custom label {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  display: block;
+  text-align: right;
+  font-family: 'Tajawal', 'Changa', sans-serif;
+}
+
+.form-input {
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  text-align: right;
+  direction: rtl;
+  font-family: 'Tajawal', 'Amiri', sans-serif;
+}
+
+.form-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+  transform: translateY(-2px);
+}
+
+.form-input:hover {
+  border-color: #bdc3c7;
+}
+
+.form-select {
+  text-align: right;
+  direction: rtl;
+  font-family: 'Tajawal', 'Amiri', sans-serif;
+}
+
+.form-textarea {
+  text-align: right;
+  direction: rtl;
+  font-family: 'Tajawal', 'Amiri', sans-serif;
+  resize: vertical;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e9ecef;
+  direction: rtl;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  border: none;
+  border-radius: 50px;
+  padding: 0.75rem 3rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  font-family: 'Changa', 'Tajawal', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animation du bouton submit similaire au login */
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+  background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+}
+
+.form-input::placeholder {
+  text-align: right;
+  color: #6c757d;
+  opacity: 0.7;
+  font-family: 'Tajawal', 'Amiri', sans-serif;
+}
+
+.form-select option {
+  text-align: right;
+  font-family: 'Tajawal', 'Amiri', sans-serif;
+}
+
+/* CHANGEMENT : Media queries pour le centrage */
+@media (max-width: 1200px) {
+  .register-container .col-lg-12 {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .register-container {
+    padding: 1rem 0.5rem;
+    min-height: calc(100vh - 120px);
+  }
+  
+  .register-container .col-lg-12 {
+    max-width: 100%;
+  }
+  
+  .register-form {
+    padding: 1rem;
+  }
+  
+  .register-title {
+    font-size: 1.8rem;
+  }
+  
+  .form-section {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.2rem;
+  }
+  
+  .submit-btn {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+  }
+  
+  /* Réduire l'animation sur mobile */
+  .register-header::before {
+    animation-duration: 6s;
+  }
+}
+
+@media (max-width: 576px) {
+  .register-container {
+    padding: 0.5rem;
+    min-height: calc(100vh - 100px);
+  }
+  
+  .register-card {
+    border-radius: 15px;
+  }
+  
+  .register-header {
+    padding: 1.5rem;
+  }
+  
+  .register-title {
+    font-size: 1.6rem;
+  }
+  
+  .register-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .register-form {
+    padding: 0.75rem;
+  }
+}
+
+/* Animation d'apparition */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.form-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 0.3rem rgba(52, 152, 219, 0.2);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.form-group-custom label[required]::after {
+  content: " *";
+  color: #e74c3c;
+}
+
+.form-section {
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.03) 0%, rgba(46, 204, 113, 0.03) 100%);
+}
+
+.form-section:hover {
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.08) 0%, rgba(46, 204, 113, 0.08) 100%);
+}
+
+/* Effet de particules lumineuses supplémentaires */
+.register-header {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(52, 152, 219, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(46, 204, 113, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(231, 76, 60, 0.2) 0%, transparent 50%),
+    linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}

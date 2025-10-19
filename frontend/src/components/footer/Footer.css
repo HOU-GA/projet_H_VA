@@ -1,0 +1,231 @@
+/* Footer.css - Footer toujours en bas même sur contenu vide */
+
+.footer-modern {
+  width: 100%;
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(45deg, #3498db, #2ecc71, #e74c3c);
+  border-image-slice: 1;
+  background: linear-gradient(145deg, #2c3e50 0%, #34495e 100%);
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 0;
+  margin-top: auto; /* Clé pour pousser vers le bas */
+  position: relative;
+  z-index: 100;
+}
+
+/* Assurer que le parent utilise flexbox */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main-content {
+  flex: 1; /* Prend tout l'espace disponible */
+  width: 100%;
+}
+
+.footer-content {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.footer-text {
+  color: #ecf0f1;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.brand-name {
+  background: linear-gradient(45deg, #3498db, #2ecc71, #e74c3c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.brand-name:hover {
+  transform: scale(1.05);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.footer-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(52, 152, 219, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.footer-content:hover::before {
+  left: 100%;
+}
+
+/* Informations supplémentaires pour le footer */
+.footer-info {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.footer-info-item {
+  color: #bdc3c7;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-info-item i {
+  font-size: 1rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablettes */
+@media (max-width: 768px) {
+  .footer-modern {
+      padding: 1.2rem 0;
+  }
+  
+  .footer-text {
+      font-size: 1rem;
+  }
+  
+  .footer-info {
+      gap: 1.5rem;
+  }
+  
+  .footer-info-item {
+      font-size: 0.85rem;
+  }
+  
+  .footer-content {
+      gap: 0.8rem;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 576px) {
+  .footer-modern {
+      padding: 1rem 0;
+  }
+  
+  .footer-content {
+      gap: 0.6rem;
+  }
+  
+  .footer-text {
+      font-size: 0.95rem;
+      line-height: 1.4;
+  }
+  
+  .footer-info {
+      gap: 1rem;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .footer-info-item {
+      font-size: 0.8rem;
+  }
+  
+  .brand-name {
+      font-size: 0.95rem;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 375px) {
+  .footer-modern {
+      padding: 0.8rem 0;
+  }
+  
+  .footer-text {
+      font-size: 0.9rem;
+  }
+  
+  .footer-info-item {
+      font-size: 0.75rem;
+  }
+  
+  .footer-content {
+      gap: 0.5rem;
+  }
+}
+
+/* Mode paysage sur mobiles */
+@media (max-height: 500px) and (orientation: landscape) {
+  .footer-modern {
+      padding: 0.8rem 0;
+      position: relative;
+  }
+  
+  .footer-text {
+      font-size: 0.9rem;
+  }
+}
+
+/* Support pour les écrans haute résolution */
+@media (min-width: 1400px) {
+  .footer-modern {
+      padding: 2rem 0;
+  }
+  
+  .footer-text {
+      font-size: 1.2rem;
+  }
+  
+  .footer-info-item {
+      font-size: 1rem;
+  }
+}
+
+/* Animation pour les réductions de motion */
+@media (prefers-reduced-motion: reduce) {
+  .footer-content::before {
+      display: none;
+  }
+  
+  .brand-name:hover {
+      transform: none;
+  }
+}
+
+/* Support dark/light mode */
+@media (prefers-color-scheme: light) {
+  .footer-modern {
+      background: linear-gradient(145deg, #34495e 0%, #2c3e50 100%);
+  }
+  
+  .footer-text {
+      color: #ecf0f1;
+  }
+  
+  .footer-info-item {
+      color: #bdc3c7;
+  }
+}
+
+/* Correction pour l'impression */
+@media print {
+  .footer-modern {
+      display: none;
+  }
+}

@@ -1,0 +1,280 @@
+.general-stats {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.stats-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.stats-header .title {
+    margin: 0;
+    font-weight: 600;
+}
+
+.stats-badge {
+    font-size: 0.8em;
+}
+
+.time-range-selector {
+    width: auto;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+}
+
+.time-range-selector option {
+    color: #333;
+}
+
+.stats-body {
+    padding: 20px;
+}
+
+.progress-section {
+    margin-bottom: 20px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.progress-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.progress-value {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.stats-progress-bar {
+    height: 8px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.progress-percentage {
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+    font-weight: 500;
+}
+
+.quick-stats {
+    margin: 15px 0;
+}
+
+.quick-stat-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.quick-stat-item .stat-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.quick-stat-item .stat-content {
+    flex: 1;
+}
+
+.quick-stat-item .stat-value {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: #333;
+    display: block;
+}
+
+.quick-stat-item .stat-label {
+    font-size: 0.8em;
+    color: #666;
+    display: block;
+}
+
+.details-toggle {
+    margin: 15px 0;
+}
+
+.toggle-details-btn {
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.advanced-stats {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.section-title {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.admin-stats-section {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.admin-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.admin-stat:last-child {
+    border-bottom: none;
+}
+
+.admin-stat-label {
+    font-weight: 500;
+    color: #555;
+}
+
+.admin-stat-value {
+    font-weight: 700;
+    color: #333;
+}
+
+.top-users-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.top-user-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.top-user-item:last-child {
+    border-bottom: none;
+}
+
+.user-rank {
+    background: #667eea;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-name {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9em;
+}
+
+.user-stats {
+    display: flex;
+    gap: 10px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.detailed-stats-section {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.detailed-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.detailed-stat:last-child {
+    border-bottom: none;
+}
+
+.detailed-stat .stat-label {
+    color: #555;
+    font-size: 0.9em;
+}
+
+.detailed-stat .stat-value {
+    font-weight: 600;
+    color: #333;
+}
+
+.stats-footer {
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    padding: 10px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.scope-info {
+    background: #e9ecef;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .time-range-selector {
+        width: 100%;
+    }
+    
+    .quick-stat-item {
+        margin-bottom: 10px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+}

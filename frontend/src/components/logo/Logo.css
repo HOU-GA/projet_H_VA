@@ -1,0 +1,19 @@
+.logo-image-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 15px;
+  }
+  
+  .logo-animated {
+    width: 60px;  /* Augmenté de 45px à 60px */
+    height: 60px; /* Augmenté de 45px à 60px */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+  
+  .logo-animated:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 8px rgba(52, 152, 219, 0.4));
+  }

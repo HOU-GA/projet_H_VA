@@ -1,0 +1,610 @@
+/*components/AdvancedFilters/AdvancedFilters.css*/
+/* Reset RTL */
+.advanced-filters-card,
+.advanced-filters-modal,
+.modal-content,
+.filters-container,
+.filter-section,
+.section-header,
+.filters-chips,
+.footer-actions,
+.primary-actions {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Carte principale */
+.advanced-filters-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.advanced-filters-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
+}
+
+.filters-card-header {
+    background: transparent;
+    border: none;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-icon {
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-text .title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.header-text .subtitle {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 0.85rem;
+}
+
+.open-filters-modal-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-direction: row-reverse;
+}
+
+.open-filters-modal-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.active-filters-footer {
+    background: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 20px;
+    backdrop-filter: blur(10px);
+}
+
+.active-filters-badge {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.filters-summary {
+    opacity: 0.9;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+/* Modal Styles RTL */
+.advanced-filters-modal .modal-content {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    border: 2px solid #e9ecef;
+}
+
+/* Header du modal RTL */
+.modal-header-custom {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    padding: 25px 30px;
+    position: relative;
+}
+
+.modal-header-custom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f5576c, #f093fb, #667eea);
+}
+
+/* Positionnement du bouton close en RTL */
+.modal-header-custom .btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    margin: -0.5rem -0.5rem -0.5rem auto;
+}
+
+.modal-header-custom .btn-close:hover {
+    opacity: 1;
+}
+
+.modal-title-custom {
+    width: 100%;
+}
+
+.title-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-direction: row-reverse;
+}
+
+.title-icon {
+    font-size: 2.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.title-content h5 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.modal-subtitle {
+    margin: 5px 0 0 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+.modal-body-custom {
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f5f6fa 100%);
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.filters-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Sections des filtres RTL */
+.filter-section {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Bande latérale à droite pour RTL */
+.filter-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #f093fb 0%, #f5576c 100%);
+}
+
+.filter-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 87, 108, 0.15);
+}
+
+/* Sections spécifiques avec différentes nuances */
+.search-section::before {
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+}
+
+.type-section::before {
+    background: linear-gradient(180deg, #f093fb 0%, #f5576c 100%);
+}
+
+.date-section::before {
+    background: linear-gradient(180deg, #ff6b6b 0%, #ffa726 100%);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f8f9fa;
+    flex-direction: row-reverse;
+}
+
+.section-icon {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+.search-section .section-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.date-section .section-icon {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+}
+
+.section-header h6 {
+    margin: 0;
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+/* Styles des inputs RTL */
+.search-input-custom,
+.select-custom,
+.date-input-custom {
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background: white;
+    text-align: right;
+}
+
+.search-input-custom:focus,
+.select-custom:focus,
+.date-input-custom:focus {
+    border-color: #f093fb;
+    box-shadow: 0 0 0 0.2rem rgba(240, 147, 251, 0.15);
+    background: white;
+}
+
+.search-input-custom::placeholder {
+    color: #6c757d;
+    opacity: 0.7;
+    text-align: right;
+}
+
+/* Correction du select pour RTL */
+.select-custom {
+    background-position: left 0.75rem center;
+    padding-right: 15px;
+    padding-left: 2.5rem;
+}
+
+.input-help-text {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 8px;
+    display: block;
+    text-align: right;
+}
+
+.form-label-custom {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    text-align: right;
+    display: block;
+}
+
+/* Aperçu des filtres actifs RTL */
+.active-filters-preview {
+    background: linear-gradient(135deg, #fff0f6 0%, #fce4ec 100%);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px dashed #f06292;
+    position: relative;
+}
+
+.active-filters-preview::before {
+    content: '⚡';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: #f06292;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.filters-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.filter-chip {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: row-reverse;
+}
+
+.search-chip {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.type-chip {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.date-chip {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+}
+
+/* Footer du modal RTL */
+.modal-footer-custom {
+    background: white;
+    border-top: 1px solid #e9ecef;
+    padding: 25px 30px;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+}
+
+.modal-footer-custom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #f5576c, #f093fb, #667eea);
+}
+
+.footer-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-direction: row-reverse;
+}
+
+.primary-actions {
+    display: flex;
+    gap: 12px;
+    flex-direction: row-reverse;
+}
+
+.action-btn {
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid transparent;
+    flex-direction: row-reverse;
+}
+
+.reset-btn {
+    background: #6c757d;
+    color: white;
+    border-color: #6c757d;
+}
+
+.reset-btn:hover {
+    background: #5a6268;
+    border-color: #545b62;
+    transform: translateY(-1px);
+}
+
+.cancel-btn {
+    background: transparent;
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.cancel-btn:hover {
+    background: #6c757d;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.apply-btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border: none;
+    color: white;
+    box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+}
+
+.apply-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #e668e6 0%, #e53e4d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(240, 147, 251, 0.4);
+}
+
+.apply-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.btn-icon {
+    font-size: 1rem;
+}
+
+/* Scrollbar personnalisée */
+.modal-body-custom::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body-custom::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.modal-body-custom::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 10px;
+}
+
+.modal-body-custom::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #e668e6 0%, #e53e4d 100%);
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.advanced-filters-modal .modal-content {
+    animation: slideInUp 0.4s ease-out;
+}
+
+/* Responsive Design RTL */
+@media (max-width: 768px) {
+    .filters-card-header {
+        flex-direction: column-reverse;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .header-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .modal-body-custom {
+        padding: 20px;
+    }
+    
+    .filter-section {
+        padding: 20px;
+    }
+    
+    .footer-actions {
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+    
+    .primary-actions {
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
+    
+    .action-btn {
+        flex: 1;
+        justify-content: center;
+    }
+    
+    .filters-chips {
+        justify-content: center;
+    }
+    
+    .title-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .section-header {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    /* Inversion des colonnes date en mobile */
+    .date-section .col-md-6:first-child {
+        order: 2;
+    }
+    
+    .date-section .col-md-6:last-child {
+        order: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .modal-header-custom {
+        padding: 20px;
+    }
+    
+    .modal-body-custom {
+        padding: 15px;
+    }
+    
+    .filter-section {
+        padding: 15px;
+    }
+    
+    .action-btn {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .search-input-custom,
+    .select-custom,
+    .date-input-custom {
+        padding: 10px 12px;
+    }
+}
+
+/* États de focus pour l'accessibilité */
+.action-btn:focus-visible,
+.search-input-custom:focus-visible,
+.select-custom:focus-visible,
+.date-input-custom:focus-visible {
+    outline: 2px solid #f093fb;
+    outline-offset: 2px;
+}
+
+/* Correction pour les icônes dans les boutons */
+.btn-icon {
+    order: -1;
+}
+
+/* Ajustement pour les badges */
+.active-filters-badge {
+    flex-direction: row-reverse;
+}

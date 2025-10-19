@@ -1,0 +1,26 @@
+.avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+  }
+  
+  .avatar-sm {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .avatar-md {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .avatar-lg {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .avatar-xl {
+    width: 80px;
+    height: 80px;
+  }

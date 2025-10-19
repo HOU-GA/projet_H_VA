@@ -1,0 +1,28 @@
+/* 📁 ChatSidebar.css */
+.conversation-unread {
+    background-color: #f8f9fa !important;
+  }
+  
+  .conversation-item {
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+  }
+  
+  .conversation-item:hover {
+    background-color: #e9ecef !important;
+  }
+  
+  .conversation-unread .conversation-name {
+    font-weight: 600 !important;
+    color: #000 !important;
+  }
+  
+  .conversation-unread .conversation-preview {
+    font-weight: 500 !important;
+    color: #333 !important;
+  }
+  
+  /* Point indicateur pour nouvelles conversations */
+  .conversation-avatar {
+    position: relative;
+  }

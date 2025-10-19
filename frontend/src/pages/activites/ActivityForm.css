@@ -1,0 +1,341 @@
+/* pages/activities/ActivityForm.css - AJOUTER CES STYLES */
+
+.form-select {
+  background-color: #ffffff !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%236b7280' viewBox='0 0 16 16'%3e%3cpath d='m7.247 11.14-4.796-5.481a.75.75 0 0 1 1.124-.998l4.595 5.25 4.595-5.25a.75.75 0 1 1 1.124.998L8.747 11.14a.75.75 0 0 1-1.5 0Z'/%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: left 0.75rem center !important;
+  background-size: 16px 12px !important;
+  color: #000000 !important; /* ✅ TEXTE NOIR FORCÉ */
+  text-align: right !important;
+  direction: rtl !important;
+  border: 1px solid #ced4da !important;
+}
+
+/* État focus - TOUJOURS visible */
+.form-select:focus {
+  background-color: #ffffff !important;
+  border-color: #007bff !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+  color: #000000 !important; /* ✅ TEXTE NOIR MAINTENU */
+}
+
+/* Options dans la liste */
+.form-select option {
+  background-color: #ffffff !important;
+  color: #000000 !important; /* ✅ Texte noir pour les options */
+  text-align: right !important;
+  direction: rtl !important;
+  padding: 8px 12px !important;
+}
+
+/* Option sélectionnée dans la liste déroulante */
+.form-select option:checked,
+.form-select option[selected] {
+  background-color: #007bff !important; /* ✅ Fond bleu */
+  color: #ffffff !important; /* ✅ Texte blanc pour l'option sélectionnée */
+}
+
+/* Option au survol dans la liste */
+.form-select option:hover {
+  background-color: #e9ecef !important;
+  color: #000000 !important;
+}
+
+/* Correction pour les selects multiples */
+.form-select[multiple] {
+  background-image: none !important;
+}
+
+/* Style cohérent pour tous les selects */
+select.form-input {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Correction pour le modal */
+.modal-content .form-select {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .form-select {
+    background-color: #1f2937 !important;
+    color: #ffffff !important;
+  }
+  
+  .form-select option {
+    background-color: #1f2937 !important;
+    color: #ffffff !important;
+  }
+  
+  .form-select option:checked,
+  .form-select option[selected] {
+    background-color: #007bff !important;
+    color: #ffffff !important;
+  }
+}
+
+
+/******************* UPLOAD DE FICHIERS *******************/
+
+/* Styles pour l'upload de fichiers */
+.file-upload-area {
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.file-upload-area:hover {
+  border-color: #007bff;
+  background: #e3f2fd;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-upload-label {
+  cursor: pointer;
+  display: block;
+}
+
+.upload-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.upload-text {
+  color: #6c757d;
+}
+
+.uploading-files {
+  display: flex;
+  align-items: center;
+  color: #007bff;
+  margin-top: 10px;
+}
+
+.uploaded-files {
+  margin-top: 15px;
+}
+
+.files-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-icon {
+  font-size: 1.2rem;
+}
+
+.file-details {
+  flex: 1;
+}
+
+.file-name {
+  font-weight: 500;
+  color: #495057;
+}
+
+.file-meta {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.remove-file-btn {
+  padding: 2px 6px;
+  font-size: 0.8rem;
+}
+
+
+/******************* SÉLECTION DES UTILISATEURS *******************/
+
+/* Styles améliorés pour la sélection des utilisateurs */
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.user-selection-item {
+  padding: 10px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.user-selection-item:hover {
+  background: #f8f9fa;
+  border-color: #007bff;
+}
+
+.user-info-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar-selection {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-details-selection {
+  flex: 1;
+}
+
+.user-name-selection {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 2px;
+}
+
+.user-career-selection {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-bottom: 2px;
+}
+
+.user-grade-selection {
+  font-size: 0.8rem;
+  color: #28a745;
+  font-weight: 500;
+}
+
+.selected-users .users-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.user-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #e3f2fd;
+  border: 1px solid #bbdefb;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.user-avatar-tag {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-tag .user-career {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+
+/******************* ACTIONS DES FICHIERS *******************/
+
+/* Styles pour les actions des fichiers */
+.file-actions {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.view-file-btn,
+.download-btn,
+.remove-file-btn {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.view-file-btn:hover {
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+  color: white;
+}
+
+.download-btn:hover {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: white;
+}
+
+.remove-file-btn:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+
+
+/******************* AMÉLIORATION AFFICHAGE FICHIERS *******************/
+
+/* Amélioration de l'affichage des fichiers */
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  margin-bottom: 8px;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.file-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.file-details {
+  flex: 1;
+}
+
+.file-name {
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+
+.file-meta {
+  font-size: 0.75rem;
+  color: #64748b;
+}
